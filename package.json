@@ -1,21 +1,15 @@
 {
     "name": "nvhead",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "read write http headers",
     "main": "nvhead.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "keywords": [
-        "http",
-        "headers"
-    ],
+    "keywords": ["http", "headers"],
     "author": "dli",
     "license": "MIT",
-    "files": [
-        "doc/*",
-        "dist/*"
-    ],
+    "files": ["doc/*", "dist/*"],
     "dependencies": {
         "elist": "^1.4.17",
         "tlist": "^1.0.4"
