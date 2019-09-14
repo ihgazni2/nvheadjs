@@ -48,7 +48,8 @@
 ### nvhead -lmode
     
     #nvhead -lmode
-    
+   
+    -exact       //exact match but ignore case
     -reqonly     //only request header
     -resonly     //only response header
     -mdnonly     //only mdn header 

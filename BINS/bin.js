@@ -13,14 +13,22 @@ if(arg1 === undefined) {
     word = arg1
 }
 
+
+
 word = word || ""
 mode = mode.toLowerCase()
 
+console.log(word,word === "",word=== undefined)
 
 if(mode === "-lmode") {
+
+    console.log("-exact  :  exact match but ignore case")
     console.log("-reqonly  :  only request header")
     console.log("-resonly  :  only response header")
     console.log("-mdnonly  :  only mdn header")
+
+} else if(mode === "-exact") {
+
 } else if(mode === "-reqonly") {
     dtb = require("../CONSTS/http-headers-mdn-req.dtb.json")
 } else if(mode === "-resonly") {
@@ -33,8 +41,21 @@ if(mode === "-lmode") {
     dtb = require("../CONSTS/http-headers.dtb.json")
 }
 
+let rsltk
+let rsltv
+let rslt
 
-let rslt = dtb.filter((r)=>(r.k.toLowerCase().includes(word)))
+
+if(mode !== "-exact") {
+    rsltk = dtb.filter((r)=>(r.k.toLowerCase().includes(word)))
+    rsltv = dtb.filter((r)=>(r.v.toLowerCase().includes(word)))
+} else {
+    rsltk = dtb.filter((r)=>(r.k.toLowerCase() === word))
+    rsltv = dtb.filter((r)=>(r.v.toLowerCase() === word))
+}
+
+rslt = rsltk.concat(rsltv)
+
 
 if(rslt.length > 1) {
     console.log(rslt.map((r)=>({[r.k]:r.v})))
