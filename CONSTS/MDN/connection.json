@@ -1,0 +1,1 @@
+{"k": "connection", "v": "Connection", "type": ["general"], "modifyForbidden": true, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Connection: keep-alive", "Connection: close"], "directives": ["close", "keep-alive"], "examples": [], "specs": []}

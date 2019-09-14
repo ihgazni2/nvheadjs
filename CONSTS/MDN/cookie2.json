@@ -1,0 +1,1 @@
+{"k": "cookie2", "v": "Cookie2", "type": ["req"], "modifyForbidden": true, "corsSafeReq": null, "corsSafeRes": null, "syntax": [], "directives": [], "examples": ["Cookie2: $Version=\"1\""], "specs": ["https://tools.ietf.org/html/rfc2965", "https://tools.ietf.org/html/rfc6265"]}

@@ -1,0 +1,1 @@
+{"k": "xXSSProtection", "v": "X-XSS-Protection", "type": ["res"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["X-XSS-Protection: 0", "X-XSS-Protection: 1", "X-XSS-Protection: 1; mode=block", "X-XSS-Protection: 1; report=<reporting-uri>"], "directives": [], "examples": [], "specs": []}

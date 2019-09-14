@@ -1,0 +1,1 @@
+{"k": "host", "v": "Host", "type": ["req"], "modifyForbidden": true, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Host: <host>:<port>"], "directives": [], "examples": ["Host: developer.cdn.mozilla.net"], "specs": ["https://tools.ietf.org/html/rfc7230#section-5.4"]}

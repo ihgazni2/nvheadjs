@@ -1,0 +1,1 @@
+{"k": "sourcemap", "v": "SourceMap", "type": ["res"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["SourceMap: <url>", "X-SourceMap: <url> (deprecated)"], "directives": [], "examples": ["SourceMap: /path/to/file.js.map"], "specs": ["https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k"]}

@@ -1,0 +1,1 @@
+{"k": "server", "v": "Server", "type": ["res"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Server: <product>"], "directives": [], "examples": ["Server: Apache/2.4.1 (Unix)"], "specs": ["https://tools.ietf.org/html/rfc7231#section-7.4.2"]}

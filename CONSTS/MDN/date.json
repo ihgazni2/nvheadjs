@@ -1,0 +1,1 @@
+{"k": "date", "v": "Date", "type": ["general"], "modifyForbidden": true, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Date: <day-name>, <day> <month> <year> <hour>:<minute>:<second> GMT"], "directives": [], "examples": ["Date: Wed, 21 Oct 2015 07:28:00 GMT \n"], "specs": ["https://tools.ietf.org/html/rfc7231#section-7.1.1.2"]}

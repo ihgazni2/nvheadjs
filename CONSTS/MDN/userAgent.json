@@ -1,0 +1,1 @@
+{"k": "userAgent", "v": "User-Agent", "type": ["req"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["User-Agent: <product> / <product-version> <comment>"], "directives": [], "examples": [], "specs": ["https://tools.ietf.org/html/rfc7231#section-5.5.3", "https://tools.ietf.org/html/rfc2616#section-14.43"]}

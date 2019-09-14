@@ -1,0 +1,1 @@
+{"k": "dnt", "v": "DNT", "type": ["req"], "modifyForbidden": true, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["DNT: 0", "DNT: 1"], "directives": [], "examples": ["navigator.doNotTrack; // \"0\" or \"1\""], "specs": ["https://w3c.github.io/dnt/drafts/tracking-dnt.html#dnt-header-field"]}

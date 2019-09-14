@@ -1,0 +1,1 @@
+{"k": "accessControlMaxAge", "v": "Access-Control-Max-Age", "type": ["res"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Access-Control-Max-Age: <delta-seconds>"], "directives": [], "examples": ["Access-Control-Max-Age: 600"], "specs": ["https://fetch.spec.whatwg.org/#http-access-control-max-age"]}

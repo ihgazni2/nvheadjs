@@ -1,0 +1,1 @@
+{"k": "largeAllocation", "v": "Large-Allocation", "type": ["res"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Large-Allocation: 0", "Large-Allocation: <megabytes>"], "directives": ["0", "<megabytes>"], "examples": ["Large-Allocation: 0\nLarge-Allocation: 500\n"], "specs": []}

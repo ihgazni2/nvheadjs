@@ -1,0 +1,1 @@
+{"k": "link", "v": "Link", "type": null, "modifyForbidden": null, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Link: < uri-reference >; param1=value1; param2=\"value2\""], "directives": [], "examples": [], "specs": ["https://tools.ietf.org/html/rfc8288#section-3", "https://tools.ietf.org/html/rfc5988#section-5"]}

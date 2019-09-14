@@ -1,0 +1,1 @@
+{"k": "origin", "v": "Origin", "type": ["req"], "modifyForbidden": true, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Origin: null", "Origin: <scheme> \"://\" <hostname> [ \":\" <port> ]"], "directives": [], "examples": ["Origin: https://developer.mozilla.org"], "specs": ["https://tools.ietf.org/html/rfc6454#section-7", "https://fetch.spec.whatwg.org/#origin-header"]}

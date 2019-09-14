@@ -1,0 +1,1 @@
+{"k": "from", "v": "From", "type": ["req"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["From: <email>"], "directives": [], "examples": ["From: webmaster@example.org"], "specs": ["https://tools.ietf.org/html/rfc7231#section-5.5.1"]}

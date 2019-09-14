@@ -1,0 +1,1 @@
+{"k": "retryAfter", "v": "Retry-After", "type": ["res"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Retry-After: <http-date>", "Retry-After: <delay-seconds>"], "directives": [], "examples": ["Retry-After: Wed, 21 Oct 2015 07:28:00 GMT\nRetry-After: 120\n"], "specs": ["https://tools.ietf.org/html/rfc7231#section-7.1.3"]}

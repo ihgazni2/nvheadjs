@@ -1,0 +1,1 @@
+{"k": "referer", "v": "Referer", "type": ["req"], "modifyForbidden": true, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Referer: <url>"], "directives": [], "examples": ["Referer: https://developer.mozilla.org/en-US/docs/Web/JavaScript"], "specs": ["https://tools.ietf.org/html/rfc7231#section-5.5.2"]}

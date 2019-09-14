@@ -1,0 +1,1 @@
+{"k": "pragma", "v": "Pragma", "type": ["general"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": true, "syntax": ["Pragma: no-cache"], "directives": [], "examples": ["Pragma: no-cache"], "specs": ["https://tools.ietf.org/html/rfc7234#section-5.4"]}

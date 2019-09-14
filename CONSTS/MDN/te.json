@@ -1,0 +1,1 @@
+{"k": "te", "v": "TE", "type": ["req"], "modifyForbidden": true, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["TE: compress", "TE: deflate", "TE: gzip", "TE: trailers", "TE: trailers, deflate;q=0.5"], "directives": ["compress", "deflate", "gzip", "trailers", "q"], "examples": [], "specs": ["https://tools.ietf.org/html/rfc7230#section-4.3"]}

@@ -1,0 +1,1 @@
+{"k": "authorization", "v": "Authorization", "type": ["req"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Authorization: <type> <credentials>"], "directives": [], "examples": ["Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l\n"], "specs": ["https://tools.ietf.org/html/rfc7235#section-4.2", "https://tools.ietf.org/html/rfc7617"]}

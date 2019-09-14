@@ -1,0 +1,1 @@
+{"k": "earlyData", "v": "Early-Data", "type": ["req"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Early-Data: 1"], "directives": [], "examples": ["GET /resource HTTP/1.0\nHost: example.com\nEarly-Data: 1"], "specs": ["https://tools.ietf.org/html/rfc8470#section-5.1"]}

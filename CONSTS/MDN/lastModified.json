@@ -1,0 +1,1 @@
+{"k": "lastModified", "v": "Last-Modified", "type": ["res"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": true, "syntax": ["Last-Modified: <day-name>, <day> <month> <year> <hour>:<minute>:<second> GMT"], "directives": ["GMT"], "examples": ["Last-Modified: Wed, 21 Oct 2015 07:28:00 GMT \n"], "specs": ["https://tools.ietf.org/html/rfc7232#section-2.2"]}

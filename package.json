@@ -1,15 +1,18 @@
 {
     "name": "nvhead",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "read write http headers",
     "main": "nvhead.js",
+    "bin": {
+        "nvhead": "./BINS/bin.js"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": ["http", "headers"],
     "author": "dli",
     "license": "MIT",
-    "files": ["doc/*", "dist/*"],
+    "files": ["doc/*", "dist/*", "CONSTS/*", "CONSTS/MDN/*", "BINS/*"],
     "dependencies": {
         "elist": "^1.4.17",
         "tlist": "^1.0.4"

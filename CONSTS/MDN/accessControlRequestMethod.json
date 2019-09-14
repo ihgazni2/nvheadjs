@@ -1,0 +1,1 @@
+{"k": "accessControlRequestMethod", "v": "Access-Control-Request-Method", "type": ["req"], "modifyForbidden": true, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Access-Control-Request-Method: <method>"], "directives": [], "examples": ["Access-Control-Request-Method: POST"], "specs": ["https://fetch.spec.whatwg.org/#http-access-control-request-method"]}

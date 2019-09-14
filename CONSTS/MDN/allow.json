@@ -1,0 +1,1 @@
+{"k": "allow", "v": "Allow", "type": ["entity"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Allow: <http-methods>"], "directives": [], "examples": ["Allow: GET, POST, HEAD"], "specs": ["https://tools.ietf.org/html/rfc7231#section-7.4.1"]}

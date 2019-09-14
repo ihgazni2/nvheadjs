@@ -1,0 +1,1 @@
+{"k": "vary", "v": "Vary", "type": ["res"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Vary: *", "Vary: <header-name>, <header-name>, ..."], "directives": [], "examples": ["Vary: User-Agent"], "specs": ["https://tools.ietf.org/html/rfc7231#section-7.1.4"]}

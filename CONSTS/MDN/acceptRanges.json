@@ -1,0 +1,1 @@
+{"k": "acceptRanges", "v": "Accept-Ranges", "type": ["res"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Accept-Ranges: bytes", "Accept-Ranges: none"], "directives": ["none", "bytes"], "examples": ["Accept-Ranges: bytes\n"], "specs": ["https://tools.ietf.org/html/rfc7233#section-2.3"]}

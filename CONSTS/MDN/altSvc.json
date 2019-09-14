@@ -1,0 +1,1 @@
+{"k": "altSvc", "v": "Alt-Svc", "type": null, "modifyForbidden": null, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Alt-Svc: clear", "Alt-Svc: <service-list>; ma=<max-age>", "Alt-Svc: <service-list>; ma=<max-age>; persist=1"], "directives": [], "examples": [], "specs": ["https://tools.ietf.org/html/rfc7838"]}

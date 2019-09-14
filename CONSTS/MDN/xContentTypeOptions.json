@@ -1,0 +1,1 @@
+{"k": "xContentTypeOptions", "v": "X-Content-Type-Options", "type": ["res"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["X-Content-Type-Options: nosniff"], "directives": ["nosniff"], "examples": [], "specs": ["https://fetch.spec.whatwg.org/#x-content-type-options-header"]}

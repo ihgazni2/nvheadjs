@@ -1,0 +1,1 @@
+{"k": "featurePolicy", "v": "Feature-Policy", "type": ["res"], "modifyForbidden": true, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Feature-Policy: <directive> <allowlist>"], "directives": [], "examples": [], "specs": ["https://w3c.github.io/webappsec-feature-policy/#feature-policy-http-header-field"]}

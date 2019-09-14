@@ -1,0 +1,1 @@
+{"k": "location", "v": "Location", "type": ["res"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Location: <url>"], "directives": [], "examples": ["Location: /index.html"], "specs": ["https://tools.ietf.org/html/rfc7231#section-7.1.2"]}

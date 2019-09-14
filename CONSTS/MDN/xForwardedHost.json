@@ -1,0 +1,1 @@
+{"k": "xForwardedHost", "v": "X-Forwarded-Host", "type": ["req"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["X-Forwarded-Host: <host>"], "directives": [], "examples": ["X-Forwarded-Host: id42.example-cdn.com\n"], "specs": []}

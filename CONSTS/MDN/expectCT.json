@@ -1,0 +1,1 @@
+{"k": "expectCT", "v": "Expect-CT", "type": ["res"], "modifyForbidden": true, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Expect-CT: report-uri=\"<uri>\",", "\u00a0          enforce,", "max-age=<age>"], "directives": ["max-age", "report-uri=\"<uri>\"", "enforce"], "examples": [], "specs": ["https://tools.ietf.org/html/draft-ietf-httpbis-expect-ct-07"]}

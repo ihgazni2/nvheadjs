@@ -1,0 +1,1 @@
+{"k": "secWebSocketAccept", "v": "Sec-WebSocket-Accept", "type": ["res"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Sec-WebSocket-Accept: <hashed key>"], "directives": [], "examples": ["Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo="], "specs": []}

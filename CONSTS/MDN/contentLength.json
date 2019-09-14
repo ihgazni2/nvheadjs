@@ -1,0 +1,1 @@
+{"k": "contentLength", "v": "Content-Length", "type": ["entity"], "modifyForbidden": true, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["Content-Length: <length>"], "directives": [], "examples": [], "specs": ["https://tools.ietf.org/html/rfc7230#section-3.3.2"]}

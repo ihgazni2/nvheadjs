@@ -1,0 +1,1 @@
+{"k": "xForwardedProto", "v": "X-Forwarded-Proto", "type": ["req"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["X-Forwarded-Proto: <protocol>"], "directives": [], "examples": ["X-Forwarded-Proto: https", "# Microsoft\nFront-End-Https: on\n\nX-Forwarded-Protocol: https \nX-Forwarded-Ssl: on \nX-Url-Scheme: https\n"], "specs": []}

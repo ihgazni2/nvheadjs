@@ -1,0 +1,1 @@
+{"k": "ifRange", "v": "If-Range", "type": ["req"], "modifyForbidden": false, "corsSafeReq": null, "corsSafeRes": null, "syntax": ["If-Range: <day-name>, <day> <month> <year> <hour>:<minute>:<second> GMT", "If-Range: <etag>"], "directives": [], "examples": ["If-Range: Wed, 21 Oct 2015 07:28:00 GMT \n"], "specs": ["https://tools.ietf.org/html/rfc7233#section-3.2"]}
