@@ -64,7 +64,6 @@ rslt = rslt.concat(rsltv).uniqualize()
 rslt = dtb.seqs(rslt)
 
 
-
 if(rslt.length > 1) {
     console.log(rslt.map((r)=>({[r.k]:r.v})))
 } else if(rslt.length == 1) {

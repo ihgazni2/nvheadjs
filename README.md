@@ -63,6 +63,8 @@
     # nvhead -resonly coo
     [ { setCookie: 'Set-Cookie' }, { setCookie2: 'Set-Cookie2' } ]
 
+    # nvhead -exact accept
+
 
 ## Introduce
 -------------
