@@ -13,10 +13,15 @@ if(arg1 === undefined) {
     word = arg1
 }
 
-
+word = word || ""
 mode = mode.toLowerCase()
 
-if(mode === "-reqonly") {
+
+if(mode = "-lmode") {
+    console.log("-reqonly  :  only request header")
+    console.log("-resonly  :  only response header")
+    console.log("-mdnonly  :  only mdn header")
+} else if(mode === "-reqonly") {
     dtb = require("../CONSTS/http-headers-mdn-req.dtb.json")
 } else if(mode === "-resonly") {
     dtb = require("../CONSTS/http-headers-mdn-res.dtb.json")
@@ -27,6 +32,7 @@ if(mode === "-reqonly") {
 } else {
     dtb = require("../CONSTS/http-headers.dtb.json")
 }
+
 
 let rslt = dtb.filter((r)=>(r.k.toLowerCase().includes(word)))
 

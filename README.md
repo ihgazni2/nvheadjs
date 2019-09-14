@@ -13,6 +13,56 @@
 **[USAGE DOCS](https://navegador5.github.io/nvheadjs/global.html#)**
 
 
+
+## CLI SEARCH
+-------------
+
+    npm install nvhead -g
+
+### nvhead \<word-to-search\>
+
+    #nvhead accept
+    [ { xDeviceAccept: 'X-Device-Accept' },
+      { xDeviceAcceptCharset: 'X-Device-Accept-Charset' },
+      { xDeviceAcceptEncoding: 'X-Device-Accept-Encoding' },
+      { xDeviceAcceptLanguage: 'X-Device-Accept-Language' },
+      { accept: 'Accept' },
+      { acceptAdditions: 'Accept-Additions' },
+      { acceptCharset: 'Accept-Charset' },
+      { acceptDatetime: 'Accept-Datetime' },
+      { acceptEncoding: 'Accept-Encoding' },
+      { acceptFeatures: 'Accept-Features' },
+      { acceptLanguage: 'Accept-Language' },
+      { acceptPatch: 'Accept-Patch' },
+      { acceptPost: 'Accept-Post' },
+      { acceptRanges: 'Accept-Ranges' },
+      { secWebsocketAccept: 'Sec-WebSocket-Accept' } ]
+
+    # nvhead coo
+    [ { cookie: 'Cookie' },
+      { cookie2: 'Cookie2' },
+      { setCookie: 'Set-Cookie' },
+      { setCookie2: 'Set-Cookie2' } ]
+
+
+### nvhead -lmode
+    
+    #nvhead -lmode
+    
+    -reqonly     //only request header
+    -resonly     //only response header
+    -mdnonly     //only mdn header 
+
+
+### nvhead \<mode\> \<word-to-search\>
+
+    # nvhead -reqonly coo
+    [ { cookie: 'Cookie' }, { cookie2: 'Cookie2' } ]
+
+    # nvhead -resonly coo
+    [ { setCookie: 'Set-Cookie' }, { setCookie2: 'Set-Cookie2' } ]
+
+
 ## Introduce
 -------------
   
