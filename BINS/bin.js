@@ -6,12 +6,13 @@ let arg1 = process.argv[3]
 let word = ""
 
 if(arg1 === undefined) {
-    mode = null
+    mode = ""
     word = arg0
 } else {
     mode = arg0
     word = arg1
 }
+
 
 mode = mode.toLowerCase()
 
