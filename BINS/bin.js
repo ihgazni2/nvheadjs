@@ -6,8 +6,13 @@ let arg1 = process.argv[3]
 let word = ""
 
 if(arg1 === undefined) {
-    mode = ""
-    word = arg0
+    if(arg0[0] !== "-"){
+        mode = ""
+        word = arg0
+    } else {
+        mode = arg0
+        word = ""
+    }
 } else {
     mode = arg0
     word = arg1
@@ -18,7 +23,6 @@ if(arg1 === undefined) {
 word = word || ""
 mode = mode.toLowerCase()
 
-console.log(word,word === "",word=== undefined)
 
 if(mode === "-lmode") {
 
@@ -28,7 +32,7 @@ if(mode === "-lmode") {
     console.log("-mdnonly  :  only mdn header")
 
 } else if(mode === "-exact") {
-
+    dtb = require("../CONSTS/http-headers.dtb.json")
 } else if(mode === "-reqonly") {
     dtb = require("../CONSTS/http-headers-mdn-req.dtb.json")
 } else if(mode === "-resonly") {
