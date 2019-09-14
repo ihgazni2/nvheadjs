@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const elel = require("elist")
+
 let dtb = null
 let arg0 = process.argv[2]
 let arg1 = process.argv[3]
@@ -51,14 +53,16 @@ let rslt
 
 
 if(mode !== "-exact") {
-    rsltk = dtb.filter((r)=>(r.k.toLowerCase().includes(word)))
-    rsltv = dtb.filter((r)=>(r.v.toLowerCase().includes(word)))
+    rsltk = dtb.findAllIndexes((r)=>(r.k.toLowerCase().includes(word)))
+    rsltv = dtb.findAllIndexes((r)=>(r.v.toLowerCase().includes(word)))
 } else {
-    rsltk = dtb.filter((r)=>(r.k.toLowerCase() === word))
-    rsltv = dtb.filter((r)=>(r.v.toLowerCase() === word))
+    rsltk = dtb.findAllIndexes((r)=>(r.k.toLowerCase() === word))
+    rsltv = dtb.findAllIndexes((r)=>(r.v.toLowerCase() === word))
 }
 
-rslt = rsltk.concat(rsltv)
+rslt = rslt.concat(rsltv).uniqualize()
+rslt = dtb.seqs(rslt)
+
 
 
 if(rslt.length > 1) {

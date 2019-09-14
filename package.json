@@ -1,6 +1,6 @@
 {
     "name": "nvhead",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "read write http headers",
     "main": "nvhead.js",
     "bin": {
@@ -14,7 +14,7 @@
     "license": "MIT",
     "files": ["doc/*", "dist/*", "CONSTS/*", "CONSTS/MDN/*", "BINS/*"],
     "dependencies": {
-        "elist": "^1.4.17",
+        "elist": "^1.4.18",
         "tlist": "^1.0.4"
     },
     "devDependencies": {
