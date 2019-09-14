@@ -30,7 +30,7 @@ if(mode === "-reqonly") {
 let rslt = dtb.filter((r)=>(r.k.toLowerCase().includes(word)))
 
 if(rslt.length > 1) {
-    console.log(rslt.map((r)=>({r.k:r.v})))
+    console.log(rslt.map((r)=>({[r.k]:r.v})))
 } else if(rslt.length == 1) {
     console.log(rslt[0])
 } else {
