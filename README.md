@@ -64,6 +64,22 @@
     [ { setCookie: 'Set-Cookie' }, { setCookie2: 'Set-Cookie2' } ]
 
     # nvhead -exact accept
+    { k: 'accept',
+      v: 'Accept',
+      type: [ 'req' ],
+      modifyForbidden: false,
+      corsSafeReq: true,
+      corsSafeRes: null,
+      syntax:
+       [ 'Accept: <MIME_type>/<MIME_subtype>',
+         'Accept: <MIME_type>/*',
+         'Accept: */*',
+         'Accept: text/html, application/xhtml+xml, application/xml;q=0.9, image/webp, */*;q=0.8' ],
+      directives:
+       [ '<MIME_type>/<MIME_subtype>', '<MIME_type>/*', '*/*', ';q=' ],
+      examples:
+       [ 'Accept: text/html\n\nAccept: image/*\n\n// General default\nAccept: */*\n\n// Default for navigation requests\nAccept: text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8\n' ],
+      specs: [ 'https://tools.ietf.org/html/rfc7231#section-5.3.2' ] }
 
 
 ## Introduce
