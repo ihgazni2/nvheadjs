@@ -101,10 +101,5 @@
 -------------
 
 [tlistjs](https://github.com/navegador5/tlistjs)
-<<<<<<< HEAD
-=======
-[elistjs](https://github.com/ihgazni2/elistjs)
-
->>>>>>> 961d00a9424be616d6b8f69a380ed484f4db6390
 
 [elistjs](https://github.com/ihgazni2/elistjs)
