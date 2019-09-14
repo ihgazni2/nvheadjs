@@ -60,7 +60,7 @@ if(mode !== "-exact") {
     rsltv = dtb.findAllIndexes((r)=>(r.v.toLowerCase() === word))
 }
 
-rslt = rslt.concat(rsltv).uniqualize()
+rslt = rsltk.concat(rsltv).uniqualize()
 rslt = dtb.seqs(rslt)
 
 
