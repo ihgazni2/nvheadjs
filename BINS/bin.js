@@ -17,7 +17,7 @@ word = word || ""
 mode = mode.toLowerCase()
 
 
-if(mode = "-lmode") {
+if(mode === "-lmode") {
     console.log("-reqonly  :  only request header")
     console.log("-resonly  :  only response header")
     console.log("-mdnonly  :  only mdn header")
