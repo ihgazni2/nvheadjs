@@ -13,6 +13,49 @@
 **[USAGE DOCS](https://navegador5.github.io/nvheadjs/global.html#)**
 
 
+## FILL HEAD WITH STRING
+------------------------
+
+    var nvhead = require("nvhead").Head
+    var hd = nvhead.getInstance()
+    hd = hd.append("Accept-Encoding","deflate, gzip;q=1.0, *;q=0.5")
+    hd = hd.prepend("Accept","text/html")
+    hd = hd.insert("Accept-Language","zh-CN,zh;q=0.9,en;q=0.8,es;q=0.7",1)
+    hd = hd.append("Accept","application/xml;q=0.9")
+    hd = hd.append("Accept","text/html;q=0.8")
+    hd.first("Accept")
+    hd.last("Accept")
+    hd.which("Accept",1)
+    hd.all("Accept")
+    //
+    > hd
+    Head [
+      [ 'Accept', 'text/html' ],
+      [ 'Accept-Language', 'zh-CN,zh;q=0.9,en;q=0.8,es;q=0.7' ],
+      [ 'Accept-Language', 'zh-CN,zh;q=0.9,en;q=0.8,es;q=0.7' ],
+      [ 'Accept-Encoding', 'deflate, gzip;q=1.0, *;q=0.5' ],
+      [ 'Accept', '' ],
+      [ 'Accept-Encoding', 'deflate, gzip;q=1.0, *;q=0.5' ],
+      [ 'Accept', 'application/xml;q=0.9' ],
+      [ 'Accept', 'text/html;q=0.8' ] ]
+    >
+    //
+    hd = hd.setfirst("Accept","application/xml")
+    hd = hd.setlast("Accept","application/xml")
+    hd = hd.setwhich("Accept","text/plain",1)
+    hd = hd.setall("Accept","text/plain")
+    //
+    hd = hd.rmfirst("Accept")
+    hd = hd.rmwhich("Accept",1)
+    hd = hd.rmlast("Accept")
+    hd = hd.rmall("Accept")
+    //
+    hd = hd.rmforce('Accept')
+    //
+    hd.slist()
+    console.log(hd.hdstr())
+
+
 
 ## CLI SEARCH
 -------------
