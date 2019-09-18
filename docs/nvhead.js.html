@@ -1,4 +1,32 @@
-const util = require("util")
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: nvhead.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: nvhead.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const util = require("util")
 const elel = require("elist")
 const tlist = require("tlist")
 const Tlist = require("tlist").Tlist
@@ -6,8 +34,8 @@ const Tlist = require("tlist").Tlist
 /**
  * t2s
  *
- * <pre>
- * </pre>
+ * &lt;pre>
+ * &lt;/pre>
  *
  * @example
  * term
@@ -33,8 +61,8 @@ function t2s(t) {
 /**
  * s2t
  *
- * <pre>
- * </pre>
+ * &lt;pre>
+ * &lt;/pre>
  *
  * @example
  * term
@@ -65,8 +93,8 @@ function s2t(s) {
 /**
  * tl2sl
  *
- * <pre>
- * </pre>
+ * &lt;pre>
+ * &lt;/pre>
  *
  * @example
  * term
@@ -94,8 +122,8 @@ function tl2sl(tl) {
 /**
  * sl2tl
  *
- * <pre>
- * </pre>
+ * &lt;pre>
+ * &lt;/pre>
  *
  * @example
  * term
@@ -123,8 +151,8 @@ function sl2tl(sl) {
 /**
  * sl2s
  *
- * <pre>
- * </pre>
+ * &lt;pre>
+ * &lt;/pre>
  *
  * @example
  * term
@@ -152,8 +180,8 @@ function sl2s(sl) {
 /**
  * s2sl
  *
- * <pre>
- * </pre>
+ * &lt;pre>
+ * &lt;/pre>
  *
  * @example
  * term
@@ -182,13 +210,13 @@ function s2sl(s) {
 /**
  * isHeadEntryTuple
  *
- * <pre>
+ * &lt;pre>
  *     [key,value]
  *     key is string
  *     vale is sttring
  *     key can NOT be empty 
  *     value cant be empty
- * </pre>
+ * &lt;/pre>
  *
  * @example
  * term
@@ -217,7 +245,7 @@ function isHeadEntryTuple(obj) {
         let cond0 = util.isString(obj[0])
         let cond1 = util.isString(obj[1])
         let cond2 = (obj[0].trim().length > 0)
-        return(cond0 && cond1 && cond2)
+        return(cond0 &amp;&amp; cond1 &amp;&amp; cond2)
     } else {
         return(false)
     }
@@ -227,8 +255,8 @@ function isHeadEntryTuple(obj) {
 /**
  * isHeadEntryStr
  *
- * <pre>
- * </pre>
+ * &lt;pre>
+ * &lt;/pre>
  *
  * @example
  * term
@@ -267,8 +295,8 @@ function isHeadEntryStr(s) {
 /**
  * isSlist
  *
- * <pre>
- * </pre>
+ * &lt;pre>
+ * &lt;/pre>
  *
  * @example
  * term
@@ -302,8 +330,8 @@ function isSlist(obj) {
 /**
  * isHeadStr
  *
- * <pre>
- * </pre>
+ * &lt;pre>
+ * &lt;/pre>
  *
  * @example
  * term
@@ -348,7 +376,7 @@ class Head extends Tlist {
     /**
      * constructor
      * 
-     * <pre>
+     * &lt;pre>
      *     Do NOT use new Head()!!!!
      *     because  Head-extends-Tlist, Tlist-extends-Array
      *     and constructor-in-Head is overwrited
@@ -357,7 +385,7 @@ class Head extends Tlist {
      *     so use Head.getInstance() to get a new instance, it has a label _firstInit to 
      *         indicate  if this is the first-init, the-rewrited-constructor-function  will be trigged
      *         if NOT the first-init, the default-constructor-function  will be trigged
-     * </pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -420,8 +448,8 @@ class Head extends Tlist {
     /**
      * append
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -447,8 +475,8 @@ class Head extends Tlist {
     /**
      * prepend
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -480,8 +508,8 @@ class Head extends Tlist {
     /**
      * insert
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -517,8 +545,8 @@ class Head extends Tlist {
     /**
      * first
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -553,8 +581,8 @@ class Head extends Tlist {
     /**
      * last
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -589,8 +617,8 @@ class Head extends Tlist {
     /**
      * which
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -624,8 +652,8 @@ class Head extends Tlist {
     /**
      * all
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -659,8 +687,8 @@ class Head extends Tlist {
     /**
      * setfirst
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -687,8 +715,8 @@ class Head extends Tlist {
     /**
      * setlast
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -715,8 +743,8 @@ class Head extends Tlist {
     /**
      * setwhich
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -755,8 +783,8 @@ class Head extends Tlist {
     /**
      * setall
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -786,8 +814,8 @@ class Head extends Tlist {
     /**
      * rmfirst
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -831,8 +859,8 @@ class Head extends Tlist {
     /**
      * rmlast
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -857,8 +885,8 @@ class Head extends Tlist {
     /**
      * rmwhich
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -883,8 +911,8 @@ class Head extends Tlist {
     /**
      * rmall
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -909,9 +937,9 @@ class Head extends Tlist {
     /**
      * rmforce
      *
-     * <pre>
+     * &lt;pre>
      *     this is for libcurl forcefully-delete
-     * </pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -944,8 +972,8 @@ class Head extends Tlist {
     /**
      * slist
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -970,8 +998,8 @@ class Head extends Tlist {
     /**
      * hdstr
      *
-     * <pre>
-     * </pre>
+     * &lt;pre>
+     * &lt;/pre>
      *
      * @example
      * term
@@ -1006,3 +1034,26 @@ module.exports = {
     isHeadStr,
     Head
 }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#isHeadEntryStr">isHeadEntryStr</a></li><li><a href="global.html#isHeadEntryTuple">isHeadEntryTuple</a></li><li><a href="global.html#isHeadStr">isHeadStr</a></li><li><a href="global.html#isSlist">isSlist</a></li><li><a href="global.html#s2sl">s2sl</a></li><li><a href="global.html#s2t">s2t</a></li><li><a href="global.html#sl2s">sl2s</a></li><li><a href="global.html#sl2tl">sl2tl</a></li><li><a href="global.html#t2s">t2s</a></li><li><a href="global.html#tl2sl">tl2sl</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Wed Sep 18 2019 04:09:55 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
