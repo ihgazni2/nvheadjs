@@ -343,6 +343,12 @@ function constructor_(obj) {
 }
 
 
+/**
+ * Head
+ *
+ */
+
+
 
 class Head extends Tlist {
     /**
