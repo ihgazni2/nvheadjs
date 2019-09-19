@@ -68,9 +68,9 @@ rslt = rsltk.concat(rsltv).uniqualize()
 rslt = dtb.seqs(rslt)
 
 
-if(rslt.length > 1) {
+if(mode !== "-exact") {
     console.log(rslt.map((r)=>({[r.k]:r.v})))
-} else if(rslt.length == 1) {
+} else if((mode == "-exact") && (rslt.length>0)) {
     console.log(rslt[0])
 } else {
     console.log("not Found!!!")
