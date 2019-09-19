@@ -16,7 +16,7 @@
 ## FILL HEAD WITH STRING
 ------------------------
 
-    var nvhead = require("nvhead").Head
+    var nvhead = require("nvhead").nvhead.Head
     var hd = nvhead.getInstance()
     hd = hd.append("Accept-Encoding","deflate, gzip;q=1.0, *;q=0.5")
     hd = hd.prepend("Accept","text/html")
