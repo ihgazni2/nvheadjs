@@ -31,14 +31,13 @@ if(mode === "-lmode") {
     console.log("-exact  :  exact match but ignore case")
     console.log("-reqonly  :  only request header")
     console.log("-resonly  :  only response header")
+    console.log("-iana  :  iana header")
     console.log("-mdnonly  :  only mdn header")
 
 } else if(mode === "-exact") {
     let dtb0 = require("../CONSTS/http-headers-mdn-req.dtb.json")
     let dtb1 = require("../CONSTS/http-headers-mdn-res.dtb.json")
     dtb = dtb0.concat(dtb1)
-    let dtb2 = require("../CONSTS/http-headers.dtb.json")
-    dtb = dtb.concat(dtb2)
 } else if(mode === "-reqonly") {
     dtb = require("../CONSTS/http-headers-mdn-req.dtb.json")
 } else if(mode === "-resonly") {
