@@ -1,6 +1,6 @@
 {
     "name": "nvhead",
-    "version": "1.0.27",
+    "version": "1.0.28",
     "description": "read write http headers",
     "main": "index.js",
     "bin": {
@@ -16,7 +16,7 @@
     "dependencies": {
         "elist": "^1.4.25",
         "nvmime": "^1.0.10",
-        "tlist": "^1.0.21"
+        "tlist": "^1.0.22"
     },
     "devDependencies": {
         "efdir": ">=1.0.3",

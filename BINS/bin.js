@@ -1,6 +1,20 @@
 #!/usr/bin/env node
 
 const elel = require("elist")
+const tltl = require("tlist")
+
+function dlistUniqualizeAllK(dl) {
+    let tl = tltl.dl2tl(dl)
+    tl = tltl.uniqualizeAllK(tl)
+    return(tltl.tl2dl(tl))
+}
+
+
+
+
+
+
+
 
 let dtb = null
 let arg0 = process.argv[2]
@@ -69,7 +83,9 @@ rslt = dtb.seqs(rslt)
 
 
 if(mode !== "-exact") {
-    console.log(rslt.map((r)=>({[r.k]:r.v})))
+    rslt = rslt.map((r)=>({[r.k]:r.v}))
+    rslt = dlistUniqualizeAllK(rslt)
+    console.log(rslt)
 } else if((mode == "-exact") && (rslt.length>0)) {
     console.log(rslt[0])
 } else {
