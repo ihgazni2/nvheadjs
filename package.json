@@ -1,6 +1,6 @@
 {
     "name": "nvhead",
-    "version": "1.0.29",
+    "version": "1.0.30",
     "description": "read write http headers",
     "main": "./dist/index.js",
     "bin": {
@@ -12,7 +12,7 @@
     "keywords": ["http", "headers"],
     "author": "dli",
     "license": "MIT",
-    "files": ["doc/*", "dist/*", "CONSTS/*", "CONSTS/MDN/*", "BINS/*"],
+    "files": ["doc/*", "dist/*", "CONSTS/*", "CONSTS/MDN/*", "BINS/*", "nvhead.js", "reqhd.js", "reshd.js", "index.js"],
     "dependencies": {
         "elist": "^1.4.25",
         "nvmime": "^1.0.10",
