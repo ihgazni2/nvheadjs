@@ -1,6 +1,9 @@
-let nvhead = require("./nvhead.js")
-
+let nvhd = require("./nvhead.js")
+let reqhd = require("./reqhd.js")
+let reshd = require("./reshd.js")
 
 module.exports = {
-    nvhead
+    nvhd,
+    reqhd,
+    reshd,
 }
