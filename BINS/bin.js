@@ -23,6 +23,7 @@ if(arg1 === undefined) {
 
 
 word = word || ""
+word = word.toLowerCase()
 mode = mode.toLowerCase()
 
 
