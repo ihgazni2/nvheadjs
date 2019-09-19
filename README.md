@@ -95,7 +95,8 @@
     -exact       //exact match but ignore case
     -reqonly     //only request header
     -resonly     //only response header
-    -mdnonly     //only mdn header 
+    -iana        //iana header
+    -mdnonly     //only mdn header ,default mode
 
 
 ### nvhead \<mode\> \<word-to-search\>

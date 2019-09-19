@@ -39,12 +39,12 @@ if(mode === "-lmode") {
     dtb = require("../CONSTS/http-headers-mdn-req.dtb.json")
 } else if(mode === "-resonly") {
     dtb = require("../CONSTS/http-headers-mdn-res.dtb.json")
-} else if(mode === "-mdnonly"){
+} else if(mode === "-iana"){
+    dtb = require("../CONSTS/http-headers.dtb.json")
+} else {
     let dtb0 = require("../CONSTS/http-headers-mdn-req.dtb.json")
     let dtb1 = require("../CONSTS/http-headers-mdn-res.dtb.json")
     dtb = dtb0.concat(dtb1)
-} else {
-    dtb = require("../CONSTS/http-headers.dtb.json")
 }
 
 let rsltk
