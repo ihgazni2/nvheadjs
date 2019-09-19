@@ -1,6 +1,6 @@
 {
     "name": "nvhead",
-    "version": "1.0.16",
+    "version": "1.0.17",
     "description": "read write http headers",
     "main": "nvhead.js",
     "bin": {
