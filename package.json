@@ -1,8 +1,8 @@
 {
     "name": "nvhead",
-    "version": "1.0.28",
+    "version": "1.0.29",
     "description": "read write http headers",
-    "main": "index.js",
+    "main": "./dist/index.js",
     "bin": {
         "nvhead": "./BINS/bin.js"
     },
