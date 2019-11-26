@@ -1,6 +1,6 @@
 {
     "name": "nvhead",
-    "version": "1.0.30",
+    "version": "1.0.31",
     "description": "read write http headers",
     "main": "./dist/index.js",
     "bin": {
@@ -9,23 +9,10 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "keywords": [
-        "http",
-        "headers"
-    ],
+    "keywords": ["http", "headers"],
     "author": "dli",
     "license": "MIT",
-    "files": [
-        "doc/*",
-        "dist/*",
-        "CONSTS/*",
-        "CONSTS/MDN/*",
-        "BINS/*",
-        "nvhead.js",
-        "reqhd.js",
-        "reshd.js",
-        "index.js"
-    ],
+    "files": ["doc/*", "dist/*", "CONSTS/*", "CONSTS/MDN/*", "BINS/*", "nvhead.js", "reqhd.js", "reshd.js", "index.js"],
     "dependencies": {
         "acorn": "^7.0.0",
         "elist": "^1.4.25",

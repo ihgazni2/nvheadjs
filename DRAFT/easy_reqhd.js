@@ -4,6 +4,10 @@ const elel = require("elist")
 const kl = dtb.mapv((r)=>r.k)
 const vl = dtb.mapv((r)=>r.v)
 
+function copy(o) {
+    return(JSON.parse(JSON.stringify(o)))
+}
+
 function getHeadName(k) {
     let index = kl.indexOf(k)
     let v = vl[index]
@@ -312,11 +316,29 @@ function fmtMonthName(s) {
 }
 
 function fmtHours(s) {
-    if(s.length === 1) {
+    if(s.toString().length === 1) {
         s = "0" +s 
     } else {
     }
     return(s)
+}
+
+function dateStr2Dict(s) {
+    /*
+        "Wed, 21 Oct 2015 07:28:00 GMT"
+        > dateStr2Dict("Wed, 21 Oct 2015 07:28:00 GMT")
+        { dayName: 3, day: 21, mon: 9, year: 2015, hour: 7, min: 28, sec: 0 }
+    */
+    let d = {}
+    let dt = new Date(s)
+    d.dayName = dt.getDay()
+    d.day = dt.getDate()
+    d.mon = dt.getMonth()
+    d.year = dt.getFullYear()
+    d.hour = dt.getHours()
+    d.min = dt.getMinutes()
+    d.sec = dt.getSeconds()
+    return(d)
 }
 
 function dateDict2Str(d) {
@@ -331,7 +353,6 @@ function dateDict2Str(d) {
     return(s)
 }
 
-
 function fmtDateInputEngine(value) {
     if(!util.isString(value) && !util.isArray(value)) {
         value = dateDict2Str(value)
@@ -340,6 +361,93 @@ function fmtDateInputEngine(value) {
     }
     return(value)
 }
+
+
+////
+function quoteIfNecessary(s,quote) {
+    quote = quote || '"'
+    if(s.includes(' ')) {
+        s = quote + s + quote
+    } else {
+    }
+    return(s)
+}
+
+function quoteTokenize(s,quote) {
+    quote = quote || '"'
+    let toks = []
+    let cache = ''
+    let arr = Array.from(s)
+    ////start 
+    let si = arr.findIndex((r)=>(r[0]!==' '))
+    ////
+    let state = "init"
+    for(let i = si; i<s.length; i++) {
+        ////
+        if(state === 'init') {
+            if(s[i] === ' ') {
+                state = 'init'
+            } else if(s[i] === quote) {
+                state = 'quote'
+                cache = quote
+            } else {
+                state = 'normal'
+                cache = s[i]
+            }
+        }
+        ////
+        else if(state === 'normal') {
+            if(s[i] === ' ') {
+                toks.push(cache)
+                cache = ''
+                state= 'init'
+            } else {
+                cache = cache + s[i]
+                state= 'normal'
+            }
+        }
+        ////
+        else if(state === 'quote') {
+            if(s[i] === quote) {
+                cache = cache + quote
+                toks.push(cache)
+                cache = ''
+                state = 'init'
+            } else {
+                cache = cache + s[i]
+                state = 'quote'
+            }
+        }
+    }
+    ////end
+    if(cache === '') {
+    } else {
+        toks.push(cache)
+    }
+    return(toks)
+}
+
+////
+function entries2Dict(entries) {
+    let d = {}
+    for(let i=0;i<entries.length;i++) {
+        d[entries[i][0]] = entries[i][1]
+    }
+    return(d)
+}
+
+////
+
+function dictEle2Str(d,sp="=") {
+    let [k,v] = Object.entries(d)[0]
+    return(k+sp+v)
+}
+
+function str2DictEle(s,sp='=') {
+    let entry = s.split(/[ ]*=[ ]*/)
+    return(entries2Dict([entry]))
+}
+
 
 ////
 
@@ -593,6 +701,7 @@ class Head {
         return(getEngine("warning",this))
     }
     set warning(value) {
+        value = fmtWarningInput(value)
         setEngine("warning",value,this)
     }
 
@@ -607,6 +716,7 @@ class Head {
         return(getEngine("acceptLanguage",this))
     }
     set acceptLanguage(value) {
+        value = fmtAcceptLanguageInput(value)
         setEngine("acceptLanguage",value,this)
     }
 
@@ -614,6 +724,7 @@ class Head {
         return(getEngine("forwarded",this))
     }
     set forwarded(value) {
+        value = fmtForwardInput(value)
         setEngine("forwarded",value,this)
     }
 
@@ -621,6 +732,7 @@ class Head {
         return(getEngine("expect",this))
     }
     set expect(value) {
+        value = 
         setEngine("expect",value,this)
     }
 
@@ -635,6 +747,7 @@ class Head {
         return(getEngine("proxyAuthorization",this))
     }
     set proxyAuthorization(value) {
+        value = fmtProxyAuthorizationInput(value)
         setEngine("proxyAuthorization",value,this)
     }
 
@@ -646,6 +759,7 @@ class Head {
     }
 
     get authorization() {
+        value = fmtAuthorizationInput(value)
         return(getEngine("authorization",this))
     }
     set authorization(value) {
@@ -656,6 +770,7 @@ class Head {
         return(getEngine("link",this))
     }
     set link(value) {
+        value = fmtLinkInput(value)
         setEngine("link",value,this)
     }
 
@@ -691,6 +806,7 @@ class Head {
         return(getEngine("ifUnmodifiedSince",this))
     }
     set ifUnmodifiedSince(value) {
+        value = fmtIfUnmodifiedSince(value)
         setEngine("ifUnmodifiedSince",value,this)
     }
     
@@ -931,7 +1047,6 @@ function acceptEncodingHelp() {
     console.log("gzip","compress","deflate","br","identity","*")
 }
 
-
 function fmtWantDigestInput(value) {
     /*
        // Want-Digest: sha-256
@@ -992,6 +1107,23 @@ function fmtReqTEinput(value) {
 function reqTEhelp() {
     console.log("trailers","gzip","compress","deflate")
 }
+
+
+function fmtAcceptLanguageInput(value) {
+    /*
+        var s = 'fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5'
+        var value = commaSemiEqQalStr2List(s,"lang")
+        fmtAcceptLanguageInput(value)
+        [ { lang: 'fr-CH' },
+          { lang: 'fr', q: '0.9' },
+          { lang: 'en', q: '0.8' },
+          { lang: 'de', q: '0.7' },
+          { lang: '*', q: '0.5' } ]
+    */
+    return(fmtCommaSemiEqQalInput(value,'lang'))
+}
+
+
 
 
 //Cookie,Cookie2
@@ -1322,8 +1454,250 @@ function contentEncodingHelp() {
     console.log("gzip","compress","deflate","br","identity")
 }
 
+//Warning: <warn-code> <warn-agent> <warn-text> [<warn-date>]
+//Warning: 110 anderson/1.3.37 "Response is stale"
+//Date: Wed, 21 Oct 2015 07:28:00 GMT 
+//Warning: 112 - "cache down" "Wed, 21 Oct 2015 07:28:00 GMT"
+
+function warningStr2Dict(s) {
+    /*
+        s = '112 - "cache down" "Wed, 21 Oct 2015 07:28:00 GMT"'
+        warningStr2Dict(s)
+        { warnCode: '112',
+          warnAgent: '-',
+          warnText: 'cache down',
+          warnDate:
+           { dayName: 3, day: 21, mon: 9, year: 2015, hour: 7, min: 28, sec: 0 } 
+        }
+    */
+    let d = {}
+    let arr = quoteTokenize(s,'"')
+    let regex = new RegExp(/"(.*)"/)
+    arr = arr.map((r)=>(r.replace(/"(.*?)"/g,"$1")))
+    d.warnCode = arr[0]
+    d.warnAgent = arr[1]
+    d.warnText = arr[2]
+    if(arr.length > 3) {
+        d.warnDate = dateStr2Dict(arr[3])
+    }
+    return(d)
+}
+
+function warningDict2Str(d,quote) {
+    s = quoteIfNecessary(d.warnCode,quote) + " "+ quoteIfNecessary(d.warnAgent,quote) + " " + quoteIfNecessary(d.warnText,quote)
+    if(d.warnDate) {
+        s = s + " " + quoteIfNecessary(dateDict2Str(d.warnDate),quote)
+    }
+    return(s)
+}
+
+function fmtWarningInput(value) {
+    if(!util.isString(value) && !util.isArray(value)) {
+        value = WarningDict2Str(value)
+    } else {
+        value = value 
+    }
+    return(value)
+}
+
+function warningHelp() {
+    let d = { warnCode: '112',
+        warnAgent: '-',
+        warnText: 'cache down',
+        warnDate:
+            { dayName: 3, day: 21, mon: 9, year: 2015, hour: 7, min: 28, sec: 0 } 
+    }
+    console.log(d)
+}
 
 
+////Forwarded: by=<identifier>;for=<identifier>;host=<host>;proto=<http|https>
+////Forwarded: for=192.0.2.60;proto=http;by=203.0.113.43
+////Forwarded: for=192.0.2.43, for="[2001:db8:cafe::17]"
+
+
+
+function forwardOneStr2Dict(s) {
+    /*
+        s='for=192.0.2.60;proto=http;by=203.0.113.43'
+        d = forwardOneStr2Dict(s)
+    */
+    let arr = s.split(/[ ]*;[ ]*/)
+    arr = arr.map(r=>r.split(/[ ]*=[ ]*/))
+    return(entries2Dict(arr))
+}
+
+function forwardOneDict2Str(d) {
+    /*
+        d = { for: '192.0.2.60', proto: 'http', by: '203.0.113.43' }
+        forwardOneDict2Str(d)
+    */
+    let KL = ["by","for","host","proto"]
+    let s = ""
+    for(let i=0;i<KL.length;i++) {
+        if(d[KL[i]]) {
+            s = s+ KL[i]+'='+d[KL[i]] + ';'
+        } else {
+            
+        }
+    }
+    return(s.substr(0,s.length-1))
+}
+
+
+function forwardedStr2List(s) {
+    /*
+        s = 'for=192.0.2.43, for="[2001:db8:cafe::17]"'
+    */
+    let arr = s.split(/[ ]*,[ ]*/)
+    arr = arr.map(forwardOneStr2Dict)
+    return(arr)
+}
+
+
+function forwardList2Str(l) {
+    /*
+        l = [ { for: '192.0.2.43' }, { for: '"[2001:db8:cafe::17]"' } ]
+    */
+    l = l.map(forwardOneDict2Str)
+    return(l)
+}
+
+
+function fmtForwardInput(value) {
+    if(!util.isString(value) && !util.isArray(value)) {
+        value = forwardList2Str(value)
+    } else {
+        value =  value
+    }
+    return(value)
+}
+
+
+//Proxy-Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
+
+function basicProxyAuthorizationDict2Str(d) {
+    /*
+        { username: 'aladdin', password: 'opensesame' }
+        
+    */
+    let s = d.username+":"+d.password
+    let buf = Buffer.from(s);
+    s = buf.toString('base64')
+    return("Basic "+s)
+}
+
+function fmtProxyAuthorizationInput(value) {
+    if(!util.isString(value) && !util.isArray(value)) {
+        value = basicProxyAuthorizationDict2Str(value)
+    } else {
+        value = value
+    }
+    return(value)
+}
+
+
+function fmtAuthorizationInput(value) {
+    /*
+        same as basicProxyAuthorizationDict2Str
+    */
+    if(!util.isString(value) && !util.isArray(value)) {
+        value = basicProxyAuthorizationDict2Str(value)
+    } else {
+        value = value
+    }
+    return(value)
+}
+
+
+//Link: https://bad.example; rel="preconnect"
+
+function linkStr2Dict(s) {
+    /*
+        s = 'https://bad.example; rel="preconnect"'
+    */
+    let d = {}
+    let arr = s.split(/[ ]*;[ ]*/)
+    let uri = arr[0]
+    arr.shift(0)
+    arr = arr.map(r=>r.split(/[ ]*=[ ]*/))
+    d = entries2Dict(arr)
+    d.uri = uri
+    return(d)
+}
+
+
+function linkDict2Str(d) {
+    d = copy(d)
+    let s = d['uri']
+    delete d.uri
+    let entries = Object.entries(d)
+    if(entries.length == 0) {
+        
+    } else {
+        entries = entries.map(r=>(r[0] + '=' + r[1]))
+        s = s + "; " + entries.join('; ')
+    }
+    return(s)
+}
+
+function fmtLinkInput(value) {
+    /*
+        
+    */
+    if(!util.isString(value) && !util.isArray(value)) {
+        value = linkDict2Str(value)
+    } else {
+        value = value
+    }
+    return(value)
+}
+
+
+function fmtIfUnmodifiedSince(value) {
+    value = fmtDateInputEngine(value)
+    return(value)
+}
+
+
+//Content-Type: text/html; charset=UTF-8
+//Content-Type: multipart/form-data; boundary=something
+
+function contentTypeDict2Str(d) {
+    let s = ""
+    s = d.mediaType 
+    if(s.charset) {
+        s = s + "; " + "charset=" + d.charset
+    } 
+    if(s.boundary) {
+        s = s + "; " + "boundary=" + d.boundary
+    }
+    return(s)
+}
+
+function contentTypeStr2Dict(s) {
+    let d = {}
+    let arr = s.split(/[ ]*;[ ]+/)
+    for(let each of arr) {
+        if(each.includes("charset")) {
+            d.charset = str2DictEle(each)
+        } else if(each.includes("boundary")) {
+            d.boundary = str2DictEle(each)
+        } else {
+            d.mediaType = each
+        }
+    } 
+    return(d)
+}
+
+function fmtContentTypeInput(value) {
+    if(!util.isString(value) && !util.isArray(value)) {
+        value = contentTypeDict2Str(value)
+    } else {
+        value = value
+    }
+    return(value)
+}
 
 
 
@@ -1331,26 +1705,48 @@ function contentEncodingHelp() {
 // Alt-Svc: <service-list>; ma=<max-age>
 // Alt-Svc: <service-list>; ma=<max-age>; persist=1
 
+function altSvcDict2Str(d) {
+    let s = ""
+    s = d.altSvc 
+    if(s.ma) {
+        s = s + "; " + "ma=" + d.ma
+    } 
+    if(s.persist) {
+        s = s + "; " + "persist=" + d.persist
+    }
+    return(s)
+}
 
 
-//Warning: <warn-code> <warn-agent> <warn-text> [<warn-date>]
-//Warning: 110 anderson/1.3.37 "Response is stale"
-//Date: Wed, 21 Oct 2015 07:28:00 GMT 
-//Warning: 112 - "cache down" "Wed, 21 Oct 2015 07:28:00 GMT"
+function altSvcStr2Dict(s) {
+    let d = {}
+    let arr = s.split(/[ ]*;[ ]+/)
+    for(let each of arr) {
+        if(each.includes("ma")) {
+            d.ma = str2DictEle(each)
+        } else if(each.includes("persist")) {
+            d.persist = str2DictEle(each)
+        } else {
+            d.serviceList = each
+        }
+    } 
+    return(d)
+}
 
 
 
 
 
-hd = new Head()
+// hd = new Head()
 
-hd.connection = 'Keep-Alive'
-hd.accept = '*/*'
-hd.userAgent = 'Microsoft-Delivery-Optimization/10.0'
-hd.cookie = {}
-hd.cookie._ga = 'GA1.2.883519595.1573610523',
-hd.cookie._gid = 'GA1.2.222128770.1573610524',
-hd.cookie._gat_gtag_UA_296621_13 = 1 
+// hd.connection = 'Keep-Alive'
+// hd.accept = '*/*'
+// hd.userAgent = 'Microsoft-Delivery-Optimization/10.0'
+// hd.cookie = {}
+// hd.cookie._ga = 'GA1.2.883519595.1573610523',
+// hd.cookie._gid = 'GA1.2.222128770.1573610524',
+// hd.cookie._gat_gtag_UA_296621_13 = 1 
 
-hd.slist()
+// hd.slist()
+
 
