@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const elel = require("elist")
 const tltl = require("tlist")
 
 function dlistUniqualizeAllK(dl) {

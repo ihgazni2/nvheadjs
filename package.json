@@ -1,25 +1,39 @@
 {
     "name": "nvhead",
-    "version": "1.0.31",
+    "version": "1.0.33",
     "description": "read write http headers",
-    "main": "./dist/index.js",
+    "main": "./index.js",
     "bin": {
         "nvhead": "./BINS/bin.js"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "keywords": ["http", "headers"],
+    "keywords": [
+        "http",
+        "headers"
+    ],
     "author": "dli",
     "license": "MIT",
-    "files": ["doc/*", "dist/*", "CONSTS/*", "CONSTS/MDN/*", "BINS/*", "nvhead.js", "reqhd.js", "reshd.js", "index.js"],
+    "files": [
+        "CONSTS/*",
+        "CONSTS/MDN/*",
+        "BINS/*",
+        "nvhead.js",
+        "reqhd.js",
+        "reshd.js",
+        "index.js"
+    ],
     "dependencies": {
         "acorn": "^7.0.0",
-        "elist": "^1.4.25",
-        "nvmime": "^1.0.10",
+        "nv-facutil-compress": "^1.0.10",
         "tlist": "^1.0.22"
     },
     "devDependencies": {
+        "@rollup/plugin-commonjs": "^18.0.0",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-node-resolve": "^11.2.1",
+        "@rollup/plugin-replace": "^2.4.2",
         "efdir": ">=1.0.3",
         "jsdoc": ">1.6.3",
         "webpack": "^4.35.3",

@@ -1,5 +1,4 @@
 const util = require("util")
-const elel = require("elist")
 const tlist = require("tlist")
 const Tlist = require("tlist").Tlist
 
