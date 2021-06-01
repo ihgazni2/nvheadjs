@@ -86,7 +86,8 @@ if(mode === '-api') {
     console.log(hd.hdstr())
 `
   
-    console.log(tem)
+    console.log(tem);
+    process.exit(0)
 
 } else if(mode === "-lmode") {
 
