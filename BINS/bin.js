@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const tltl = require("tlist")
+const tltl = require("../tlist")
 
 function dlistUniqualizeAllK(dl) {
     let tl = tltl.dl2tl(dl)

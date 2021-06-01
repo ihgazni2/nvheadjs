@@ -1,6 +1,6 @@
 {
     "name": "nvhead",
-    "version": "1.0.33",
+    "version": "1.0.36",
     "description": "read write http headers",
     "main": "./index.js",
     "bin": {
@@ -22,12 +22,12 @@
         "nvhead.js",
         "reqhd.js",
         "reshd.js",
-        "index.js"
+        "index.js",
+        "tlist.js"
     ],
     "dependencies": {
         "acorn": "^7.0.0",
-        "nv-facutil-compress": "^1.0.10",
-        "tlist": "^1.0.22"
+        "nv-facutil-compress": "^1.0.10"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^18.0.0",

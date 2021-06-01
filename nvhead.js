@@ -1,6 +1,6 @@
 const util = require("util")
-const tlist = require("tlist")
-const Tlist = require("tlist").Tlist
+const tlist = require("./tlist")
+const Tlist = require("./tlist").Tlist
 
 /**
  * t2s
